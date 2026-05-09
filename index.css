@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -12,6 +16,49 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
+    padding-top: 5rem;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #233554;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    color: #64ffda;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: #ccd6f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #64ffda;
 }
 
 header {
@@ -155,8 +202,35 @@ h2::after {
     left: 0;
 }
 
+/* Otras habilidades */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: #112240;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #233554;
+}
+
+.skill-item h4 {
+    color: #64ffda;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+    color: #a8b2d1;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 .contact {
     color: #a8b2d1;
+    margin-bottom: 1rem;
 }
 
 .contact a {
@@ -166,4 +240,56 @@ h2::after {
 
 .contact a:hover {
     text-decoration: underline;
+}
+
+.contact-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    color: #8892b0;
+    text-decoration: none;
+    border: 1px solid #233554;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.contact-links a:hover {
+    color: #64ffda;
+    border-color: #64ffda;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #233554;
+    margin-top: 2rem;
+}
+
+footer p {
+    color: #8892b0;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .nav-menu a {
+        font-size: 0.8rem;
+    }
+    
+    body {
+        padding-top: 4.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
